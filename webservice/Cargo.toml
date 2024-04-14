@@ -1,0 +1,28 @@
+[package]
+name = "webservice"
+version = "0.1.0"
+edition = "2021"
+# 意思是如果我不指定运行的二进制包，则执行这个
+default-run = "teacher-service"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+actix-cors = "0.6.4"
+actix-web = "4"
+actix-rt = "2.9.0"
+serde = { version = "1.0.188", features = ["derive"]}
+chrono = { version = "0.4.31", features = ["serde"]}
+dotenv = "0.15.0"
+openssl = {version = "0.10.57", features = ["vendored"]}
+sqlx = {version = "0.7.1", features = ["postgres","runtime-tokio-rustls","macros","chrono"]}
+
+# [[bin]]
+# name = "server1"
+
+[[bin]]
+name = "teacher-service"
+
+# [[bin]]
+# name = "state"
+# path = "./bin/state.rs"
